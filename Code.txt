@@ -1,0 +1,6 @@
+Create a file as root named: /etc/udev/rules.d/70-persistent-net.rules
+Add this:
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:01:02:03:04:05", ATTR{dev_id}=="0x0", ATTR{type}=="1", NAME="wlan0"
+Reboot
+
+*Be sure to change 00:01:02:03:04:05 to the proper MAC address of your wireless device. This should give you what you need.
