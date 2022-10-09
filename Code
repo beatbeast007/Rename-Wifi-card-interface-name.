@@ -1,7 +1,10 @@
 Type "sudo su"
-enter root password if prompted.
-open location, type: "/etc/udev/rules.d/"
-create a new file, type: "touch 70-persistent-net.rules"
+(enter root password if prompted.)
+
+Open location, type: "/etc/udev/rules.d/"
+
+Create a new file, type: "touch 70-persistent-net.rules"
+
 Add this:
 SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:01:02:03:04:05", ATTR{dev_id}=="0x0", ATTR{type}=="1", NAME="wlan0"
 Reboot
